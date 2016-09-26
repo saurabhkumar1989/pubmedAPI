@@ -6,7 +6,10 @@ url = base_url + query
 
 response = requests.get(url)
 import re
-
+#XML tree
 tree = ElementTree.fromstring(response.content)
-
+#simple xml data
 content = response.content 
+exp = re.compile(r'<.*?>')
+text_only = exp.sub('',content).strip()
+print text_only.replace(" ", "")
