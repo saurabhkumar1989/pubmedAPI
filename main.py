@@ -12,4 +12,5 @@ tree = ElementTree.fromstring(response.content)
 content = response.content 
 exp = re.compile(r'<.*?>')
 text_only = exp.sub('',content).strip()
-print text_only.replace(" ", "")
+a = text_only.replace('\n','')
+print a.replace('\t','')
