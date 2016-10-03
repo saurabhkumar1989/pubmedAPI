@@ -17,9 +17,6 @@ name_space = '{http://www.openarchives.org/OAI/2.0/}'
 full_text = "pmc" #https://www.ncbi.nlm.nih.gov/pmc/tools/oai/#examples -supported documents 
 
 data = []
-###
-
-a= []
 #Check available data format as not every document is available as full
 def documentFormat(document_id):
     document_format_verb = "ListMetadataFormats"
