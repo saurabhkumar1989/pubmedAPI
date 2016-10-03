@@ -25,14 +25,27 @@ metadataPrefix_doc_id = "pmc_fm"
 url1 = base_url + document_id_verb +"&"+ "from=" + base_date + "&" + "until=" + until + "&" + "metadataPrefix=" + metadataPrefix_doc_id
 
 doc_id_response = requests.get(url1)
+###
+#For document data
+metadataPrefix_doc = "pmc"
+document_data_verb = "GetRecord"
 
-response = requests.get(url)
-import re
 #XML tree
-tree = ElementTree.fromstring(response.content)
+tree = ElementTree.fromstring(doc_id_response.content)
+
+documents = tree.find(name_space + 'ListIdentifiers')
+document_id = []
+for document in documents:
+    document_id = document.find(name_space + 'identifier').text
+    print document_id
+
+url2 = base_url + document_data_verb + "&" + "identifier=" + document_id + "metadataPrefix=" +  metadataPrefix_doc
+
+response = requests.get(url2)
+print response
 #simple xml data
-content = response.content 
-exp = re.compile(r'<.*?>')
-text_only = exp.sub('',content).strip()
-a = text_only.replace('\n','')
-print a.replace('\t','')
+#content = response.content 
+#exp = re.compile(r'<.*?>')
+#text_only = exp.sub('',content).strip()
+#a = text_only.replace('\n','')
+#print a.replace('\t','')
