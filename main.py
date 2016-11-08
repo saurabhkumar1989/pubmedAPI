@@ -7,6 +7,7 @@ from time import sleep
 from mysql.connector import connect, Error
 
 ###############################################################################
+
 # DB Configuration
 config = {
   'user': 'root',
@@ -15,6 +16,7 @@ config = {
   'database': 'pubmed',
   'raise_on_warnings': True,
 }
+# Db insert query
 add_data = ("INSERT IGNORE INTO articledata "
               "(articleId,abstract, link) "
               "VALUES (%s,%s,%s)")
@@ -38,6 +40,7 @@ data = []
 
 a= []
 ##############################################################################
+
 def data_insert(document,documet_id):
     documet_id = documet_id[26:]
     data = (documet_id, document, 'htttp:&%@')
