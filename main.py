@@ -147,6 +147,7 @@ document_ids = documentIds()
 
 for document_id in document_ids:    
     print "docuemtn append"
+    sleep(.1)
     document = documentText(document_id)
     data.append(document)
     data_insert(document,document_id)
