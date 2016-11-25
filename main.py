@@ -75,7 +75,8 @@ def isResumptionToken(documents):
     else:
         result["documents"] = documents
         result["token"] = token
-        return result   
+        return result 
+# XML to text
 def toText(document):
     content = document
     exp = re.compile(r'<.*?>')
