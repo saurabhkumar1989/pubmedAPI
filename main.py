@@ -6,9 +6,7 @@ from time import sleep
 #### DB Connection 
 from mysql.connector import connect, Error
 
-###############################################################################
-
-# DB Configuration
+#### DB Configuration
 config = {
   'user': 'root',
   'password': 'XXXXXX',
