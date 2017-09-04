@@ -9,7 +9,7 @@ from mysql.connector import connect, Error
 #### DB Configuration
 config = {
   'user': 'root',
-  'password': 'XXXXXX',
+  'password': 'XWXXXXX',
   'host': '127.0.0.1',
   'database': 'pubmed',
   'raise_on_warnings': True,
@@ -28,7 +28,6 @@ base_date = "2002-01-01"#year-month-date
 until = "2002-01-30"#year-month-date
 
 # To get the document ID
-
 #Dont even think of to change below
 name_space = '{http://www.openarchives.org/OAI/2.0/}'
 full_text = "pmc" #https://www.ncbi.nlm.nih.gov/pmc/tools/oai/#examples -supported documents 
